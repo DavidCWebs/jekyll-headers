@@ -60,3 +60,26 @@
       </div>
   </div>
 </header>
+<!--############################################################################
+CSS
+
+Specific CSS rules for the justified nav. it would be best if we added these to
+the project Sass files - build in a conditional to select justified nav, and if
+selected, @import the relevant file. In this way, we can keep site styles discreet.
+
+################################################################################-->
+<style>
+.nav-justified {
+  width: 100%;
+}
+.nav-justified > li {
+  float: none;
+  border: solid 1px #000;
+}
+@media (min-width: 768px){
+  .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+}
+</style>
