@@ -1,0 +1,62 @@
+<header class="main-logo text-center container">
+  <div class="row">
+    <h1 id="site-title"><a href="{{ site.url }}">{{ site.name }}</a></h1>
+    <h2 class="centreline tagline"><span>{{ site.tagline }}</span></h2>
+  </div>
+</header>
+<header class="container">
+<div class="navbar topnav navbar-static-top">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".top-nav">
+                Menu
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <nav id="top-nav" class="collapse navbar-collapse top-nav text-center" role="navigation">
+          {% if site.single-page == true %}
+            <ul id="main-nav" class="nav navbar-nav navbar-justified">
+              <li class="hidden"></li>
+              <li class="page-scroll"><a href="#section-1" data-id="{{ site.section-1 }}">{{ site.section-1 }}</a></li>
+              <li class="page-scroll"><a href="#section-2" data-id="{{ site.section-2 }}">{{ site.section-2 }}</a></li>
+              <li class="page-scroll"><a href="#section-3" data-id="{{ site.section-3 }}">{{ site.section-3 }}</a></li>
+              <li class="page-scroll"><a href="#section-4" data-id="{{ site.section-4 }}">{{ site.section-4 }}</a></li>
+            </ul>
+          {% else %}
+          {% comment %}
+            The following assumes that site navigation is defined in `_data/nav.yml`.
+            It incorporates dropdown menu markup for pages defined as subcategories.
+          {% endcomment %}
+            <ul class="nav navbar-nav navbar-right">
+              {% for node in site.data.nav %}
+                {% if node.subcategories != null %}
+                <li class="dropdown">
+                  <a href="{{ site.baseurl }}{{ node.url }}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">{{ node.title }}&nbsp;<i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                  {% for subcategory in node.subcategories %}
+                    {% if page.url == subcategory.subhref/ %}
+                      <li class="active"><a href="{{ site.baseurl }}{{ subcategory.subhref }}" class="active">{{subcategory.subtitle}}</a></li>
+                    {% else %}
+                      <li><a href="{{ site.baseurl }}{{ subcategory.subhref }}">{{subcategory.subtitle}}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+                </li>
+                {% else %}
+                {% if page.url == node.url/ %}
+                  <li class="active"><a href="{{ site.baseurl }}{{node.url}}" class="active">{{node.title}}</a></li>
+                {% else %}
+                  <li><a href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a></li>
+                {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+</div>
+</header>
