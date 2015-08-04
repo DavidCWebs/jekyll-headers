@@ -1,0 +1,13 @@
+.nav-justified {
+  width: 100%;
+  li {
+    float: none;
+    border: solid 1px #000;
+  }
+}
+@media (min-width: 768px){
+  .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+}
