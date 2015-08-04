@@ -30,7 +30,7 @@
             The following assumes that site navigation is defined in `_data/nav.yml`.
             It incorporates dropdown menu markup for pages defined as subcategories.
           {% endcomment %}
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-justified">
               {% for node in site.data.nav %}
                 {% if node.subcategories != null %}
                 <li class="dropdown">
