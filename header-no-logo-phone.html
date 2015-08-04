@@ -1,0 +1,45 @@
+<!-- Navigation -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-sm-push-9 col-md-push-9 hidden-xs">
+        {% include frontpage/header-phone.html %}
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 col-sm-pull-3 col-md-pull-3">
+        <div id="header-phone" class="visible-xs-block hidden-sm hidden-md hidden-lg">
+          <a href="tel:{{ site.phonenumber }}" class="click-phone btn ghost btn-default btn-lg{% if site.header-option == 2 %} ghost{% endif %}">
+            <i class="fa fa-phone fa-fw fa-rotate-270"></i>
+            <span class="phone-text">Click to Call</span>
+          </a>
+        </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle ghost" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="pull-left hamburger">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </span>
+            <span class="pull-right">
+            &nbsp;MENU
+          </span>
+          </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul id="main-nav" class="nav navbar-nav navbar-left">
+            <li class="hidden"></li>
+            <!--<li class="page-scroll"><a href="#top" data-id="home">Top</a></li>-->
+            <li class="page-scroll"><a href="#section-1" data-id="{{ site.section-1 }}">{{ site.section-1 }}</a></li>
+            <li class="page-scroll"><a href="#section-2" data-id="{{ site.section-2 }}">{{ site.section-2 }}</a></li>
+            <li class="page-scroll"><a href="#section-3" data-id="{{ site.section-3 }}">{{ site.section-3 }}</a></li>
+            <li class="page-scroll"><a href="#section-4" data-id="{{ site.section-4 }}">{{ site.section-4 }}</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</div>
